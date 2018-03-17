@@ -39,7 +39,7 @@ h6 {
 }
 
 .bg-primary {
-  background-color: #ee4b28 !important;
+  background-color: #ed6113 !important;
 }
 
 .bg-dark {
@@ -282,7 +282,7 @@ header.masthead p {
 }
 
 .text-primary {
-  color: #F05F40 !important;
+  color: #ed6113 !important;
 }
 
 .btn {
@@ -349,6 +349,8 @@ input {
   background: none;
   font-size: 26px;
   color: #fff;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 i {
@@ -378,6 +380,10 @@ i {
   #mainImg {
     width: 90%;
     margin-top: 45px;
+  }
+
+  .hidden-sm {
+    display: none;
   }
 
   .search-area {
