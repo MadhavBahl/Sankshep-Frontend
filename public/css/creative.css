@@ -376,6 +376,22 @@ i {
   margin-left: 25px;
 }
 
+.bottomWheel {
+  /* position: fixed; */
+  /* width: 100px; */
+  /* left: -40%; */
+}
+
+#wheel {
+  position: fixed;
+  width: 450px;
+  bottom:-225px;
+  left: -225px;
+  transition: width,left,bottom 1.2s;
+  /* transition: left 1.2s; */
+  /* transition: bottom 1.2s; */
+}
+
 @media only screen and (max-width: 600px) {
   #mainImg {
     width: 90%;
@@ -401,4 +417,9 @@ i {
     font-size: 28px;
     color: #fff;
   }
+
+  .bottomWheel {
+    display: none;
+  }
 }
+
