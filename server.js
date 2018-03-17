@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const hbs = require('hbs');
 
 const {mongoose} = require('./serverFiles/mongoose');
+const {Summary} = require('./serverFiles/summarySchema');
+const {addSummary} = require('./serverFiles/addSummary');
 
 const port = process.env.PORT || 8000;
 
@@ -22,8 +24,37 @@ app.get('/', (req, res) => {
     res.render('index.hbs');
 });
 
+app.get('/404', (req, res) => {
+    res.render('404.hbs');
+});
+
+app.get('/saveData', (req, res) => {
+    res.render('404.hbs', { error: 'GET /saveData is not <b>PERMITTED</b>' });
+});
+
 app.post('/saveData', (req, res) => {
+    if (req.body.longitude) {
+        var sumDetails = {
+            title: req.body.title,
+            keywords: req.body.keywords,
+            summary: req.body.summary
+        };
+    } else {
+        var sumDetails = {
+            title: req.body.title,
+            keywords: req.body.keywords,
+            summary: req.body.summary,
+            longitude: req.body.longitude,
+            latitude: req.body.latitude
+        };
+    }
     
+    addSummary(sumDetails, (err, doc) => {
+        if (err) {
+            return res.render('404.hbs', { error: 'Could not save the summary to the database!' });
+        }
+        res.send(doc);
+    });
 });
 
 app.post('/sendMail',(req,res) => {

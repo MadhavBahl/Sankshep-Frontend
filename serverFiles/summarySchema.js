@@ -7,7 +7,7 @@ var summarySchema = new Schema({
         required: true,
         minlength: 2
     }, keywords: {
-        type: String,
+        type: Array,
         required: true,
         trim: true
     }, summary: {
