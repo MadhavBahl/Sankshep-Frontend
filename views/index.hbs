@@ -5,15 +5,18 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Bifid is a Lightweight Encryption Algorithm for Secure data transfer
-and storage.
-The shortcomings of the cloud and IoT in terms of constrained
-devices are highlighted. There in fact exist some lightweight
-cryptography algorithms that does not always exploit security-efficiency
-trade-offs.">
-    <meta name="author" content="Team-Bifid">
+    <meta name="description" content="Sankshep is an 
+    organization which aims to educate the world and 
+    help students, teachers and educators across the 
+    globe meet their goals. We aim to use our intelligent 
+    technological solutions to benefit anybody with the will 
+    to learn. At Sankshep, we design AI systems that take study 
+    notes from a variety of multimedia sources which include but 
+    are not restricted to mp3 files, 
+    youtube videos and textual material.">
+    <meta name="author" content="Team-Sankshep">
     <link rel="shortcut icon" href="img/logo.png">
-    <title>Bifid-Crypt</title>
+    <title>Sankshep</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,26 +39,23 @@ trade-offs.">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Bifid-Crypt</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo_small.png" style="margin-top: 5px; height: 25px;" ></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#">Home</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Advantages</a>
+              <a class="nav-link js-scroll-trigger" href="/getNotes">Get Notes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="/login">Login | Signup</a>
             </li>
           </ul>
         </div>
@@ -65,16 +65,32 @@ trade-offs.">
     <header class="masthead text-center text-white d-flex">
       <div class="container my-auto">
         <div class="row">
+          
           <div class="col-lg-10 mx-auto">
             <h1 class="text-uppercase">
-              <strong>Bifid-Crypt</strong>
+              <img src="img/logo_big.png" id="mainImg" alt="SANKSHEP">
             </h1>
             <hr>
           </div>
-          <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">Cyber Security J-component: This is an implementation of bifid cipher in cloud. <br> <b>Secure Cloud Computing Using Bifid Cipher</b></p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">About Bifid</a>&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-primary btn-xl js-scroll-trigger" target="_blank" href="/login">Get Started</a>
+          <div class="col-lg-8 mx-auto" style="margin-top: -50px;">
+            
+            <a class="btn btn-primary btn-xl js-scroll-trigger" style="margin-top: 10px;" href="#about">Know More</a>&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-primary btn-xl js-scroll-trigger" style="margin-top: 10px;"  target="_blank" href="/getNotes">Get Started</a>
+
+            <br>
+            <br><br><br><br> <br><br>
+
+            {{!-- <div class="enjoy-css" placeholder="Enjoy" >
+              <p style="margin: 0;">Search Notes</p>
+            </div> --}}
+
+            <div class="search-area">
+              
+              <input type="search" id="title" placeholder="Search">
+              <i id="search" class="search fa fa-search fa-2x"></i>
+            </div>
+
+
           </div>
         </div>
       </div>
