@@ -25,6 +25,7 @@
     "express": "^4.16.3",
     "hbs": "^4.0.1",
     "mongoose": "^5.0.10",
+    "nodemailer": "^4.6.3",
     "nodemon": "^1.17.2"
   }
 }

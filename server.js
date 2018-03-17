@@ -5,6 +5,9 @@ const hbs = require('hbs');
 const {mongoose} = require('./serverFiles/mongoose');
 const {Summary} = require('./serverFiles/summarySchema');
 const {addSummary} = require('./serverFiles/addSummary');
+const {getData} = require('./serverFiles/getData');
+const {getNotes} = require('./serverFiles/getNotes');
+const {sendMail} = require('./serverFiles/sendMail');
 
 const port = process.env.PORT || 8000;
 
@@ -57,6 +60,26 @@ app.post('/saveData', (req, res) => {
     });
 });
 
+app.get('/getAllSummary', (req, res) => {
+    getData((err, data) => {
+        if (err) {
+            return res.send(err);
+        }
+        return res.send(data);
+    });
+});
+
+app.post('/getNotes', (req, res) => {
+    var searchQuery = req.body.search;
+    getNotes(searchQuery, (err, data) => {
+        if (err) {
+            res.render('404.hbs', {error: 'Could not connect to the database, Please try again later!'});
+        }
+
+        res.send(data);
+    }); 
+});
+
 app.post('/sendMail',(req,res) => {
     var details = {
         name: req.body.name,
@@ -72,6 +95,22 @@ app.post('/sendMail',(req,res) => {
         }
         console.log(info);
         res.render('index.hbs');
+    });
+});
+
+app.post('/sendMail', (req, res) => {
+    var details = {
+        name: req.body.name,
+        email: req.body.email,
+        message: req.body.message
+    };
+
+    sendMail(details, (err, response) => {
+        if (err) {
+            return res.render('404.hbs', {error: 'Could Not Send Email! Please Try Again After Some Time!'});
+        }
+
+        res.redirect('/');
     });
 });
 
