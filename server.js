@@ -162,19 +162,34 @@ app.post('/getYtSummary', (req, res) => {
         })
         .end(function (response) {
             console.log(response.body);
-            for(let i=response.body.keywords.length; i>0; i--) {
-                if (i>7) {
-                    response.body.keywords.pop();
+
+            if(response.body.keywords) {
+                if(response.body.keywords.length > 7) {
+                    for(let i=response.body.keywords.length; i>0; i--) {
+                        if (i>7) {
+                            response.body.keywords.pop();
+                        }
+                    }
                 }
             }
-            addSummary(response.body, (err, doc) => {
-                if (err) {
-                    res.status(500).send(err);   
-                }
+            
+            if(response.body.summary) {
+                addSummary(response.body, (err, doc) => {
+                    if (err) {
+                        res.status(500).send(err);   
+                    }
+                    res.render('summaryMain.hbs', {
+                        data: response.body
+                    });
+                });    
+            } else {
+                response.body.title = "Sorry! We Couldn't Find The Video. Please Try Out Some Other Video!";
+                console.log(response.body);
                 res.render('summaryMain.hbs', {
                     data: response.body
                 });
-            });
+            }
+            
             
         });
 });
@@ -203,6 +218,17 @@ app.post('/getTextSummary', (req, res) => {
             });
             
         });
+});
+
+app.post('/searchKeys', (req, res) => {
+    var searchQuery = req.body.search;
+    getNotes(searchQuery, (err, data) => {
+        if (err) {
+            res.render('404.hbs', {error: 'Could not connect to the database, Please try again later!'});
+        }
+
+        res.send(data);
+    }); 
 });
 
 app.listen (port, () => {

@@ -88,11 +88,13 @@
               <p style="margin: 0;">Search Notes</p>
             </div> --}}
 
-            <div class="search-area">
-              
-              <input type="search" id="title" placeholder="Search">
-              <i id="search" class="search fa fa-search fa-2x"></i>
+            <form action="/searchKeys" method="POST">
+              <div class="search-area">
+              <input type="text" id="title" name="search" placeholder="Search">
+              <button type="submit" style="background-color: rgba(0,0,0,0); border: 0;"><i id="search" class="search fa fa-search fa-2x"></i></button> 
             </div>
+            </form>
+            
 
 
           </div>
