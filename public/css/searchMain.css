@@ -2,7 +2,8 @@ body {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    background: url('../img/icons/bkg.png');
+    /* background: url('../img/icons/bkg.png'); */
+    background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -187,4 +188,70 @@ p {
   #punjabiKid {
       display: none;
   }
+}
+
+#cardMain {
+    background-color: #ffaa39;
+    padding: 25px;
+    border-radius: 10px;
+    word-wrap: break-word !important;
+    margin-top: 100px;
+    width: 120%;
+    color: #5e35b1;
+    max-height: 77vh;
+    overflow-y: scroll;
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.75);
+    transition: box-shadow 0.7s;
+}
+
+#cardMain:hover {
+    -webkit-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.75);
+}
+
+.keywordMain {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    color: #ffffff;
+    font-size: 18px;
+    background: #5e35b1;
+    padding: 10px 20px 10px 20px;
+    border: solid #1f628d 0px;
+    text-decoration: none;
+    transition: background-color 1.2s;
+    /* margin-left: 4px; */
+    margin-right: 7px;
+    word-wrap: break-word !important;
+    margin-bottom: 20px !important;
+    margin-top: 10px;
+}
+
+.keyboardMain:hover {
+    background: #1e4359;
+    text-decoration: none;
+}
+
+.summaryPad {
+    word-wrap: break-word;
+}
+
+#backBtn {
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    background: #5e35b1;
+    padding: 10px 20px 10px 20px;
+    border: solid #1f628d 0px;
+    text-decoration: none;
+  }
+  
+#backBtn:hover {
+    text-decoration: none;
 }

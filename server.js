@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
-const request = require('request')
+const unirest = require('unirest');
 
 const {mongoose} = require('./serverFiles/mongoose');
 const {Summary} = require('./serverFiles/summarySchema');
@@ -27,6 +27,18 @@ app.get('/summaryMain', (req, res) => {
         data: {
             title: 'Hello',
             keywords: [
+                'Hello',
+                'World',
+                'Hello',
+                'World',
+                'Hello',
+                'World',
+                'Hello',
+                'World',
+                'Hello',
+                'World',
+                'Hello',
+                'World',
                 'Hello',
                 'World'
             ],
@@ -145,6 +157,27 @@ app.post('/sendMail', (req, res) => {
         }
         res.redirect('/');
     });
+});
+
+app.post('/getYtSummary', (req, res) => {
+    unirest.post('https://flask1-test1.herokuapp.com/youtube')
+        .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+        .send({ 
+            "url": req.body.youtube, 
+            "title": req.body.title
+        })
+        .end(function (response) {
+            console.log(response.body);
+            for(let i=response.body.keywords.length; i>0; i--) {
+                if (i>7) {
+                    response.body.keywords.pop();
+                }
+            }
+            
+            res.render('summaryMain.hbs', {
+                data: response.body
+            })
+        });
 });
 
 app.listen (port, () => {

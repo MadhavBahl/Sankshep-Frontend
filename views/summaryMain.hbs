@@ -59,13 +59,46 @@
       </div>
     </nav>
 
-    <div class="row">
-        {{#each }}
-        <div class="col-">
+    {{!-- <div class="row">
+        {{#each data.keywords}}
+            <div class="col-xs-12 ">
+                {{this}}
+            </div>
+        {{/each}}
+    </div> --}}
 
-        </div>
+    <div class="container">
+        <div class="row">
         
+            <div class="col-xs-12" id="cardMain">
+                <h1><b>Title:</b> {{data.title}}</h1>
+                <br>
+                <h1> 
+                    {{#each data.keywords}}
+                        <span class="keywordMain"> {{this}} </span>
+                    {{/each}}
+                </h1>
+                <br>
+                <h1>
+                    <b>Summary</b>
+                </h1>
+
+                <div class="summaryPad" style="padding-bottom: 10px; margin-bottom: 10px;">
+                    <h4 style="color: #37474f; text-align: justify; word-wrap: break-word;">
+                        {{data.summary}}
+                    </h4>
+                </div>
+                
+            </div>
+                
+            <div class="col-xs-12" style="text-align: center; width: 100%;">
+                <br><br>
+                <h3> <a href="/getNotes" id="backBtn">Go Back</a> </h3>
+            </div>
+            
+        </div>
     </div>
+   
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
