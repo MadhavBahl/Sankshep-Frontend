@@ -10,7 +10,7 @@ const {getData} = require('./serverFiles/getData');
 const {getNotes} = require('./serverFiles/getNotes');
 const {sendMail} = require('./serverFiles/sendMail');
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 var app = express();
 app.use(bodyParser());

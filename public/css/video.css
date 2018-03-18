@@ -227,6 +227,11 @@ p {
   line-height: 125px;
   color:#FFFFFF;
   border: 0;
+  font-size: 22px;
+}
+
+.circle:hover {
+  cursor: pointer;
 }
 
 .center {

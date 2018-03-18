@@ -33,14 +33,14 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #2e1149;">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo_small.png" style="margin-top: 5px; height: 32px;" ></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <a style="color: white;"class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo_small.png" style="margin-top: 5px; height: 32px;" ></a>
+        <button style="color: white;" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span style="color: white;" class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div style="color: white;" class="collapse navbar-collapse" id="navbarResponsive">
           <ul id="navUl" class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" style="color: white; font-size: 16px;" href="#">Home</a>
+              <a class="nav-link js-scroll-trigger" style="color: white; font-size: 16px;" href="/">Home</a>
             </li>
             <div class="col-sm-12 col-md-12">
                 <form class="navbar-form" role="search">
@@ -57,8 +57,28 @@
       </div>
     </nav>
 
-    <div class="row" style="padding-top: 5%;">
-        
+    <div class="row" style="">
+        <div class="col-xs-10 offset-xs-1 col-md-4 offset-md-1" style="padding-top: 15%;">
+            <br>
+            <form action="/audio" method="post">
+                <div class="form-group">
+                    {{!-- <label for="usr">Name:</label> --}}
+                    <input style="" type="text" id="customInput" name="title" class="form-control" placeholder="Enter Title" >
+                </div>
+                <br>
+                <input type="file" class="chooseBtn" name="doc" accept=".txt">
+                <br><br>
+                <div class="center">
+                    <input type="submit" class="circle">
+                </div>
+                
+                
+            </form>
+        </div>
+        <div class="col-xs-12 col-md-6 offset-sm-1 hidden-xs">
+            <br>
+            <img id="#punjabiKid" src="img/icons/punbjabikidd.png"class="img-fluid punjabi" alt="">
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript -->
@@ -68,7 +88,7 @@
     <script type="text/javascript" src="js/tilt.jquery.js"></script>
 
       <!-- Custom scripts for this template -->
-    <script src="js/addTils.js"></script>
+    <script src="js/punjabiTilt.js"></script>
     
 </body>
 </html>
