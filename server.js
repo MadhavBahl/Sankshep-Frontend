@@ -34,12 +34,6 @@ app.get('/summaryMain', (req, res) => {
                 'Hello',
                 'World',
                 'Hello',
-                'World',
-                'Hello',
-                'World',
-                'Hello',
-                'World',
-                'Hello',
                 'World'
             ],
             summary: 'This Is The Project'
@@ -173,10 +167,41 @@ app.post('/getYtSummary', (req, res) => {
                     response.body.keywords.pop();
                 }
             }
+            addSummary(response.body, (err, doc) => {
+                if (err) {
+                    res.status(500).send(err);   
+                }
+                res.render('summaryMain.hbs', {
+                    data: response.body
+                });
+            });
             
-            res.render('summaryMain.hbs', {
-                data: response.body
-            })
+        });
+});
+
+app.post('/getTextSummary', (req, res) => {
+    unirest.post('https://flask1-test1.herokuapp.com/summarize')
+        .headers({'Accept': 'application/json', 'Content-Type': 'application/json'})
+        .send({ 
+            "text": req.body.text, 
+            "title": req.body.title
+        })
+        .end(function (response) {
+            console.log(response.body);
+            for(let i=response.body.keywords.length; i>0; i--) {
+                if (i>7) {
+                    response.body.keywords.pop();
+                }
+            }
+            addSummary(response.body, (err, doc) => {
+                if (err) {
+                    res.status(500).send(err);   
+                }
+                res.render('summaryMain.hbs', {
+                    data: response.body
+                });
+            });
+            
         });
 });
 
