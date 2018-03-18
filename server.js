@@ -22,6 +22,19 @@ app.set('view engine', 'hbs');
 /* ===== Temprary route for dev purposes ===== */
 /* =========================================== */
 
+app.get('/summaryMain', (req, res) => {
+    res.render('summaryMain.hbs', { 
+        data: {
+            title: 'Hello',
+            keywords: [
+                'Hello',
+                'World'
+            ],
+            summary: 'This Is The Project'
+        }
+    });
+});
+
 /* ===== End of user based temprary route ===== */
 
 app.get('/', (req, res) => {

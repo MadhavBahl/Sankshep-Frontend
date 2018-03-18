@@ -392,12 +392,21 @@ i {
   /* transition: bottom 1.2s; */
 }
 
+#logoImage {
+  margin-top: 7px; 
+  height: 32px;
+}
+
 @media only screen and (max-width: 600px) {
   #mainImg {
     width: 90%;
     margin-top: 45px;
   }
 
+  #logoImage {
+    margin-top: 5px; 
+    height: 20px;
+  }
   .hidden-sm {
     display: none;
   }
@@ -405,6 +414,12 @@ i {
   .search-area {
     margin-top: 0;
   }
+
+  #iseHataao {
+    display: hidden;
+  }
+
+  
 
   input {
     border: 2px solid #fff;
