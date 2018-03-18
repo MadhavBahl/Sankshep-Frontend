@@ -423,3 +423,19 @@ i {
   }
 }
 
+@font-face {
+  font-family: "prod reg";
+  src: url("../font/ProductSansRegular.ttf");
+  /* src: 
+  url("css/fonts/Harabara.woff") format("woff"),
+  url("css/fonts/Harabara.otf") format("opentype"),
+  url("css/fonts/Harabara.svg#filename") format("svg"); */
+}
+
+html, body {
+  font-family: 'prod reg' !important;
+}
+
+p {
+  font-size: 18px;
+}

@@ -69,6 +69,10 @@ app.get('/getAllSummary', (req, res) => {
     });
 });
 
+app.get('/getNotes', (req, res) => {
+    res.render('choose.hbs');
+});
+
 app.post('/getNotes', (req, res) => {
     var searchQuery = req.body.search;
     getNotes(searchQuery, (err, data) => {
