@@ -183,8 +183,52 @@ p {
 }
   
 
-@media only screen and (min-width: 600px) {
-  #kidImage {
+@media only screen and (max-width: 600px) {
+  #punjabiKid {
       display: none;
   }
+}
+
+#customInput {
+  background-color: #ffaa39;
+  border-radius: 20px;
+  border: 0;
+  color: rgb(61, 56, 56);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+.chooseBtn {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: #ffffff;
+  font-size: 18px;
+  width: 100%;
+  background: #2e1149;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+  transition: background-color 1.2s;
+}
+
+.chooseBtn:hover {
+  background: #1e4359;
+  text-decoration: none;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  background-color: #2e1149;
+  vertical-align: middle;
+  line-height: 125px;
+  color:#FFFFFF;
+  border: 0;
+}
+
+.center {
+  text-align: center;
 }

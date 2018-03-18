@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
+const request = require('request')
 
 const {mongoose} = require('./serverFiles/mongoose');
 const {Summary} = require('./serverFiles/summarySchema');
@@ -129,7 +130,6 @@ app.post('/sendMail', (req, res) => {
         if (err) {
             return res.render('404.hbs', {error: 'Could Not Send Email! Please Try Again After Some Time!'});
         }
-
         res.redirect('/');
     });
 });
