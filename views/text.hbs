@@ -33,7 +33,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #2e1149;">
       <div class="container">
-        <a style="color: white;"class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo_small.png" style="margin-top: 5px; height: 32px;" ></a>
+        <a style="color: white;"class="navbar-brand js-scroll-trigger" href="/"><img src="img/logo_small.png" style="margin-top: 5px; height: 32px;" ></a>
         <button style="color: white;" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span style="color: white;" class="navbar-toggler-icon"></span>
         </button>
@@ -43,9 +43,9 @@
               <a class="nav-link js-scroll-trigger" style="color: white; font-size: 16px;" href="/">Home</a>
             </li>
             <div class="col-sm-12 col-md-12">
-                <form class="navbar-form" role="search">
+                <form action="/searchKeys" method="POST" class="navbar-form" role="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="searchBox" placeholder="Search" name="q">
+                    <input type="text" class="form-control" id="searchBox" placeholder="Search" name="search">
                     <div class="input-group-btn">
                         <button id="searchBtn"  class="btn btn-default" type="submit"><i  class="fa fa-search"></i></button>
                     </div>
