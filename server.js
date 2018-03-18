@@ -226,8 +226,28 @@ app.post('/searchKeys', (req, res) => {
         if (err) {
             res.render('404.hbs', {error: 'Could not connect to the database, Please try again later!'});
         }
-
-        res.send(data);
+        console.log(data);
+         
+        if(data.length >0) {
+            res.render('searchResult.hbs', {
+                data: data
+            });
+        } else {
+            res.render('noData.hbs');
+        }
+        // for(let i=data.length; i>0; i--) {
+        //     if (i>7) {
+        //         response.body.keywords.pop();
+        //     }
+        // }
+        // addSummary(response.body, (err, doc) => {
+        //     if (err) {
+        //         res.status(500).send(err);   
+        //     }
+        //     res.render('summaryMain.hbs', {
+        //         data: response.body
+        //     });
+        // });
     }); 
 });
 
