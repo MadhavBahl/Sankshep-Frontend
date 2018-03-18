@@ -73,6 +73,22 @@ app.get('/getNotes', (req, res) => {
     res.render('choose.hbs');
 });
 
+app.get('/videoUpload', (req, res) => {
+    res.render('video.hbs');
+});
+
+app.get('/audioUpload', (req, res) => {
+    res.render('audio.hbs');
+});
+
+app.get('/docUpload', (req, res) => {
+    res.render('doc.hbs');
+});
+
+app.get('/textUpload', (req, res) => {
+    res.render('text.hbs');
+});
+
 app.post('/getNotes', (req, res) => {
     var searchQuery = req.body.search;
     getNotes(searchQuery, (err, data) => {
