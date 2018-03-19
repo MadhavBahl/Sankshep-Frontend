@@ -226,7 +226,7 @@ app.post('/searchKeys', (req, res) => {
         if (err) {
             res.render('404.hbs', {error: 'Could not connect to the database, Please try again later!'});
         }
-        console.log(data);
+    console.log(data);
          
         if(data.length >0) {
             res.render('searchResult.hbs', {
