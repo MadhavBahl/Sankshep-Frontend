@@ -1,1 +1,5 @@
+# Node modules
 node_modules/
+
+# OS Generated files
+.DS_Store
